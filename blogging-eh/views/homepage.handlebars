@@ -1,0 +1,26 @@
+<!-- Loop over each user object -->
+{{#each users as |user| }}
+<div class="row align-center mb-5">
+  <div class="col-md-6">
+    <!-- Render user-specific data with Handlebars.js expressions -->
+    {{!-- <h2> {{user.name}}</h2> --}}
+    {{#if loggedIn}}
+    <i class="fas fa-save text-light save-note"></i>
+        <i class="fas fa-plus text-light new-note"></i>
+    <div id="blogtext">
+      <form class=" blog-form">
+        <label for="blogname">Post Name</label>
+        <input id="text" type="postname" placeholder="Add some text">
+        <label for="textbox">Enter your thoughts here</label>
+        <input id="text" type="entry" placeholder="Add some text">
+        
+        <button id ="blogsender" type="submit">Post</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h3><a href="mailto:{{user.email}}">{{user.email}}</a></h3>
+  </div>
+</div>
+{{/if}}
+{{/each}}
